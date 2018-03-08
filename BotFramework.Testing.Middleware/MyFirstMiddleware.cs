@@ -9,25 +9,28 @@ namespace BotFramework.Testing.Middleware
 {
     public class MyFirstMiddleware : IReceiveActivity, ISendActivity, IContextCreated
     {
+        private Guid instanceId;
+
         public MyFirstMiddleware()
         {
+            this.instanceId = Guid.NewGuid();
         }
 
         public async Task ContextCreated(IBotContext context, MiddlewareSet.NextDelegate next)
         {
-            context.Reply("ContextCreated");
+            context.Reply($"{instanceId}:ContextCreated");
             await next().ConfigureAwait(false);
         }
 
         public async Task ReceiveActivity(IBotContext context, MiddlewareSet.NextDelegate next)
         {
-            context.Reply("ReceiveActivity");
+            context.Reply($"{instanceId}:ReceiveActivity");
             await next().ConfigureAwait(false);
         }
 
         public async Task SendActivity(IBotContext context, IList<Activity> activities, MiddlewareSet.NextDelegate next)
         {
-            context.Reply("SendActivity");
+            context.Reply($"{instanceId}:SendActivity");
             await next().ConfigureAwait(false);
         }
     }
