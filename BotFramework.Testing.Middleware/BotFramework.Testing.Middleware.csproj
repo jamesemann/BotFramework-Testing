@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Bot.Builder.Core">
+      <HintPath>..\..\botbuilder-dotnet\libraries\Microsoft.Bot.Builder.Core\bin\Debug\netstandard2.0\Microsoft.Bot.Builder.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bot.Schema">
+      <HintPath>..\..\botbuilder-dotnet\libraries\Microsoft.Bot.Builder.Core\bin\Debug\netstandard2.0\Microsoft.Bot.Schema.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  botframework.testing.botapplication:
+    image: botframework.testing.botapplication
+    build:
+      context: .
+      dockerfile: BotFramework.Testing.BotApplication/Dockerfile
